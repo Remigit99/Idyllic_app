@@ -32,12 +32,12 @@ export default function TabTwoScreen() {
 
         </View>
       </View>
-
+{/* 
       <TouchableOpacity onPress ={onOpen}>
         <Text>
           Show Modal from Modalize
         </Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
       <Modalize ref={modalizeRef}>
         <Text>Modalized  contents</Text>

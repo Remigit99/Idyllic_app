@@ -3,9 +3,12 @@ import { View, Text, Image, TextInput, TouchableOpacity, Pressable } from "react
 import { styles } from "../../styles/login.style"
 import { Mail, LockIcon, EyeClosed, Eye, Lock, Globe } from 'lucide-react-native';
 import { useState } from "react";
+import CheckBox from "expo-checkbox"
 
 
 const Map = () => {
+
+    const [isChecked, setIsChecked] = useState(false)
 
     const [showPassword, setShowPassword] = useState(false)
 
@@ -42,7 +45,12 @@ const Map = () => {
                     </View>
 
                     <View style={styles.forgetPass}>
-                        <TouchableOpacity>
+                        <TouchableOpacity style={styles.rememberMain}>
+                            <CheckBox
+                            value={isChecked}
+                            color={isChecked ? "#4630EB" : undefined}
+                            onValueChange={setIsChecked}
+                            />
                             <Text style={styles.remember}>Remember me</Text>
                         </TouchableOpacity>
                         <TouchableOpacity>

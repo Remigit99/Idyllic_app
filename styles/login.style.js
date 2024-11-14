@@ -59,6 +59,10 @@ export const styles = StyleSheet.create({
     marginTop: 6,
     marginBottom: 14,
   },
+  rememberMain:{
+    flexDirection: "row",
+    alignItems: "center"
+  },
   remember: {
     color: "blue",
     fontSize: 16,

@@ -19,6 +19,9 @@ import { StyleSheet } from "react-native";
         fontSize: 30,
         fontWeight: 900
     },
+    checkBox:{
+      
+    }
   
 
   });
