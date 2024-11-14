@@ -1,11 +1,23 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { Image, Platform, View, Text, ScrollView } from 'react-native';
+import { Image, Platform, View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { styles } from "../../styles/more.style"
 import { profileData } from "../../constants/profileData"
 import { LucideChevronRight } from 'lucide-react-native';
+import   {useState, useRef} from "react"
+
+import { Modalize } from 'react-native-modalize';
 
 
 export default function TabTwoScreen() {
+
+  const modalizeRef = useRef<Modalize>(null)
+
+  const onOpen = () =>{
+    modalizeRef.current?.open()
+  }
+
+
+
   return (
     <ScrollView>
 
@@ -20,6 +32,16 @@ export default function TabTwoScreen() {
 
         </View>
       </View>
+
+      <TouchableOpacity onPress ={onOpen}>
+        <Text>
+          Show Modal from Modalize
+        </Text>
+      </TouchableOpacity>
+
+      <Modalize ref={modalizeRef}>
+        <Text>Modalized  contents</Text>
+      </Modalize>
 
       <ScrollView style={styles.profileMain}>
         {
